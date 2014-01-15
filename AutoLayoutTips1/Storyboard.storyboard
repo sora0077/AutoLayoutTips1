@@ -93,16 +93,13 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.98823535442352295" green="0.80000007152557373" blue="0.050980396568775177" alpha="1" colorSpace="deviceRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="999" constant="400" id="Ca8-Ly-DJZ"/>
-                                            <constraint firstAttribute="width" priority="999" constant="400" id="pXy-SX-fSM"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ErV-X8-vHh" firstAttribute="leading" secondItem="lf3-SU-8Ig" secondAttribute="trailing" constant="10" id="1Wb-Zq-TUx"/>
                                     <constraint firstAttribute="bottom" secondItem="rGj-1K-MEe" secondAttribute="bottom" constant="10" id="8bq-sH-MUU"/>
                                     <constraint firstAttribute="trailing" secondItem="ErV-X8-vHh" secondAttribute="trailing" constant="10" id="97s-lO-ou3"/>
+                                    <constraint firstItem="lf3-SU-8Ig" firstAttribute="top" secondItem="OIA-Bf-XNp" secondAttribute="top" constant="30" id="Oje-bX-zTg"/>
                                     <constraint firstAttribute="trailing" secondItem="rGj-1K-MEe" secondAttribute="trailing" constant="10" id="S7M-JI-qQs"/>
                                     <constraint firstItem="lf3-SU-8Ig" firstAttribute="leading" secondItem="OIA-Bf-XNp" secondAttribute="leading" constant="10" id="SLj-rg-moK"/>
                                     <constraint firstItem="rGj-1K-MEe" firstAttribute="leading" secondItem="Kvu-el-GSU" secondAttribute="trailing" constant="10" id="Tfq-IB-OTT"/>
@@ -126,8 +123,6 @@
                     <connections>
                         <outlet property="_blueHeightConstraint" destination="F8F-mj-8h7" id="6dS-mi-xaP"/>
                         <outlet property="_greenWidthConstraint" destination="PDp-ie-bUk" id="PFP-K2-png"/>
-                        <outlet property="_yellowHeightConstratint" destination="Ca8-Ly-DJZ" id="h6j-eQ-QUd"/>
-                        <outlet property="_yellowWidthConstraint" destination="pXy-SX-fSM" id="m2A-CP-2TU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1x-1V-ARY" userLabel="First Responder" sceneMemberID="firstResponder"/>

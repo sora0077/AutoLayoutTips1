@@ -16,8 +16,6 @@
 {
     __weak IBOutlet NSLayoutConstraint *_greenWidthConstraint;
     __weak IBOutlet NSLayoutConstraint *_blueHeightConstraint;
-    __weak IBOutlet NSLayoutConstraint *_yellowHeightConstratint;
-    __weak IBOutlet NSLayoutConstraint *_yellowWidthConstraint;
 }
 
 
@@ -52,44 +50,43 @@
     }
 }
 
+- (void)updateConstraintAnimation:(id)sender
+{
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished) {
+                         UIScrollView *scrollView = self.view.subviews[0];
+                         [scrollView scrollRectToVisible:UIEdgeInsetsInsetRect([[sender superview] frame], UIEdgeInsetsMake(-10, -10, -10, -10))
+                                                animated:YES];
+                     }];
+}
+
 - (IBAction)greenAction:(id)sender
 {
     [self toggleConstraint:_greenWidthConstraint
                        min:70 andMax:400];
-    [self toggleConstraint:_yellowWidthConstraint
-                       min:70 andMax:400];
-    [UIView animateWithDuration:0.2
-                     animations:^{
-                         [self.view layoutIfNeeded];
-                     }];
+
+    [self updateConstraintAnimation:sender];
 }
 
 - (IBAction)blueAction:(id)sender
 {
     [self toggleConstraint:_blueHeightConstraint
                        min:168 andMax:400];
-    [self toggleConstraint:_yellowHeightConstratint
-                       min:168 andMax:400];
-    [UIView animateWithDuration:0.2
-                     animations:^{
-                         [self.view layoutIfNeeded];
-                     }];
+    
+    [self updateConstraintAnimation:sender];
 }
 
 - (IBAction)yellowAction:(id)sender
 {
     [self toggleConstraint:_greenWidthConstraint
                        min:70 andMax:400];
-    [self toggleConstraint:_yellowWidthConstraint
-                       min:70 andMax:400];
     [self toggleConstraint:_blueHeightConstraint
                        min:168 andMax:400];
-    [self toggleConstraint:_yellowHeightConstratint
-                       min:168 andMax:400];
-    [UIView animateWithDuration:0.2
-                     animations:^{
-                         [self.view layoutIfNeeded];
-                     }];
+
+    [self updateConstraintAnimation:sender];
 }
 
 @end
